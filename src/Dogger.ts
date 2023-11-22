@@ -37,11 +37,12 @@ export default class Dogger {
 
 	private async send(error: Error) {
 		const payload = {
-			code: 400, 
+			http_code: 400,
 			message: `${error.name} : ${error.message}`, 
-			trace: error.stack, 
+			stacktrace: error.stack, 
 			type: 'error', 
-			date: new Date()
+			triggered_at: new Date(),
+			env: this.config.env
 		};
 		await axios.post(`${this.config.url}/api/errors/new`, payload);
 	}
