@@ -1,4 +1,7 @@
+import axios from 'axios';
+
 export interface InitConfig {
+	url?: string
     key: string,
     env: string,
     isClient: boolean,
@@ -29,7 +32,17 @@ export default class Dogger {
 	}
 
 	private handleErrorStack(error: Error) {
-		// TODO : Send API Call to Dogger web app
-		console.log(error);
+		this.send(error);
+	}
+
+	private async send(error: Error) {
+		const payload = {
+			code: 400, 
+			message: `${error.name} : ${error.message}`, 
+			trace: error.stack, 
+			type: 'error', 
+			date: new Date()
+		};
+		await axios.post(`${this.config.url}/api/errors/new`, payload);
 	}
 }

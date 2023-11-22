@@ -1,7 +1,7 @@
 {
   "name": "dogger-sdk",
   "private": false,
-  "version": "3.0.1",
+  "version": "3.1.0",
   "type": "module",
   "main": "./dist/dogger-sdk.umd.cjs",
   "module": "./dist/dogger-sdk.js",
@@ -44,5 +44,8 @@
     "dogger",
     "errors",
     "monitoring"
-  ]
+  ],
+  "dependencies": {
+    "axios": "^1.6.2"
+  }
 }
