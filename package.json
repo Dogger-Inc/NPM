@@ -1,6 +1,6 @@
 {
   "name": "dogger-sdk",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/dogger-sdk.umd.cjs",
@@ -28,5 +28,21 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
     "vite-plugin-dts": "^3.6.3"
-  }
+  },
+  "description": "This is a simple utility package",
+  "author": "Dogger",
+  "license": "MIT",
+  "homepage": "dogger.host",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dogger-Inc/javascript-SDK/dogger-sdk-lib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dogger-Inc/javascript-SDK/dogger-sdk-lib/issues"
+  },
+  "keywords": [
+    "dogger",
+    "errors",
+    "monitoring"
+  ]
 }
