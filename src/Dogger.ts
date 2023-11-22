@@ -42,7 +42,6 @@ export default class Dogger {
 				message: `${error.name} : ${error.message}`, 
 				stacktrace: error.stack, 
 				type: 'error', 
-				triggered_at: new Date(),
 				env: this.config.env
 			};
 			await axios.post(`${this.config.url}/api/issues/new`, payload, { 
