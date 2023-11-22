@@ -1,8 +1,6 @@
-export interface InitConfig {
-    key: string,
-    env: string,
-}
+import Dogger, { InitConfig } from './Dogger';
 
 export default function (config: InitConfig) {
-	console.log(config);
+	const isClient = !!window && !!document;
+	new Dogger({ ...config, isClient });
 }
