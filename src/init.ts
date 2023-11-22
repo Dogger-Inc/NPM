@@ -1,6 +1,6 @@
 import Dogger, { InitConfig } from './Dogger';
 
 export default function (config: InitConfig) {
-	const isClient = !!(window && document);
+	const isClient = typeof window !== 'undefined' && typeof document !== 'undefined';
 	new Dogger({ ...config, isClient });
 }
