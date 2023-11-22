@@ -44,8 +44,5 @@
     "dogger",
     "errors",
     "monitoring"
-  ],
-  "dependencies": {
-    "axios": "^1.6.2"
-  }
+  ]
 }

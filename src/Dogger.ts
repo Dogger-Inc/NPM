@@ -1,6 +1,3 @@
-import axios from 'axios';
-import httpAdapter from 'axios/lib/adapters/http';
-
 export interface InitConfig {
 	url?: string
     key: string,
@@ -45,11 +42,13 @@ export default class Dogger {
 				type: 'error', 
 				env: this.config.env
 			};
-			axios.defaults.adapter = httpAdapter;
-			await axios.post(`${this.config.url}/api/issues/new`, payload, {
+			await fetch(`${this.config.url}/api/issues/new`, {
+				method: 'POST',
 				headers: {
+					'Content-Type': 'application/json',
 					Authorization: `Bearer ${this.config.key}`
-				} 
+				},
+				body: JSON.stringify(payload)
 			});
 		} catch(err) {
 			console.error(err);
