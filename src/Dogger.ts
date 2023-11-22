@@ -36,18 +36,22 @@ export default class Dogger {
 	}
 
 	private async send(error: Error) {
-		const payload = {
-			http_code: 400,
-			message: `${error.name} : ${error.message}`, 
-			stacktrace: error.stack, 
-			type: 'error', 
-			triggered_at: new Date(),
-			env: this.config.env
-		};
-		await axios.post(`${this.config.url}/api/issues/new`, payload, { 
-			headers: {
-				Authorization: `Bearer ${this.config.key}`
-			} 
-		});
+		try {
+			const payload = {
+				http_code: 400,
+				message: `${error.name} : ${error.message}`, 
+				stacktrace: error.stack, 
+				type: 'error', 
+				triggered_at: new Date(),
+				env: this.config.env
+			};
+			await axios.post(`${this.config.url}/api/issues/new`, payload, { 
+				headers: {
+					Authorization: `Bearer ${this.config.key}`
+				} 
+			});
+		} catch(err) {
+			console.error(err);
+		}
 	}
 }
