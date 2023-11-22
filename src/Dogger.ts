@@ -44,6 +44,6 @@ export default class Dogger {
 			triggered_at: new Date(),
 			env: this.config.env
 		};
-		await axios.post(`${this.config.url}/api/errors/new`, payload);
+		await axios.post(`${this.config.url}/api/issues/new`, payload);
 	}
 }
