@@ -12,15 +12,24 @@ export default class Dogger {
 		this.listenToErrors();
 	}
 
-	listenToErrors() {
-		if (this.config.isClient) {
-			window.addEventListener('error', (event) => this.handleErrorStack(event.error));
-			return;
-		}
-		process.on('uncaughtException', (error) => this.handleErrorStack(error));
+	/* PUBLIC */
+
+	public logErrorToDogger(error: Error) {
+		this.handleErrorStack(error);
 	}
 
-	handleErrorStack(error: Error) {
+	/* PRIVATE */
+
+	private listenToErrors() {
+		if (this.config.isClient) {
+			window.addEventListener('error', (event: ErrorEvent) => this.handleErrorStack(event.error));
+			return;
+		}
+		process.on('uncaughtException', (error: Error) => this.handleErrorStack(error));
+	}
+
+	private handleErrorStack(error: Error) {
+		// TODO : Send API Call to Dogger web app
 		console.log(error);
 	}
 }
