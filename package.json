@@ -1,7 +1,7 @@
 {
   "name": "dogger-sdk",
   "private": false,
-  "version": "3.2.0",
+  "version": "3.3.0",
   "type": "module",
   "main": "./dist/dogger-sdk.umd.cjs",
   "module": "./dist/dogger-sdk.js",
