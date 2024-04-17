@@ -32,7 +32,7 @@
   "description": "This is a simple utility package",
   "author": "Dogger",
   "license": "MIT",
-  "homepage": "dogger.host",
+  "homepage": "dogger.cloud",
   "repository": {
     "type": "git",
     "url": "https://github.com/Dogger-Inc/javascript-SDK/dogger-sdk-lib.git"
