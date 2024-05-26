@@ -39,7 +39,7 @@ export default class Dogger {
 		this.startTimer(id);
 	}
 
-	public stopRecord(id : string, threshold: number) {
+	public stopRecord(id : string, threshold: number = 0) {
 		this.stopTimer(id, threshold);
 	}
 	/* PRIVATE */
